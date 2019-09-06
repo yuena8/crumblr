@@ -1,0 +1,28 @@
+<p>
+  <h2>
+  <div class="pull-right">
+    <%= form_for(Heart.new) do |f| %>
+      <%= f.hidden_field :post_id, value: post.id %>
+      <%= f.submit "❤", class: 'btn btn-danger' %>
+    <% end %>
+  </div>
+  <%= link_to post.title, post %>
+  </h2>
+</p>
+
+<p class="text-muted">
+  <small><%= post.created_at.to_formatted_s(:long) %></small>
+  <br>
+  <small>
+    <%= post.hearts.count %> hearts
+  </small>
+</p>
+
+<p>
+  <br>
+  <% if post.kind == 'image' %>
+    <%= image_tag post.content, style: "width: 100%"%>
+  <% else %>
+    <%= simple_format post.content %>
+  <% end %>
+</p>

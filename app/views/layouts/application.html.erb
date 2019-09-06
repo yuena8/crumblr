@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Crumblr</title>
+
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="page-header">
+
+        <ul class="nav nav-pills pull-right">
+          <li class="nav-item">
+            <%= link_to "Home", root_url %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "About", about_url %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Manage Posts", posts_url %>
+          </li>
+        </ul>
+        <h1>
+          <a href="/">crumblr</a>
+          <small>// home baked goodness</small>
+        </h1>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+        <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
